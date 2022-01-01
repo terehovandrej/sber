@@ -13,8 +13,11 @@ def calculation(arr, znaks):
                 tmp -= num
             elif znak == '*':
                 tmp *= num
-            elif znak == '//':
+            elif znak == '//' and num != 0:
                 tmp //= num
+            # elif znak == '//' and num == 0:
+            #     tmp = 0
+            #     break
 
         if tmp > result:
             result = tmp
@@ -22,4 +25,6 @@ def calculation(arr, znaks):
     return result
 
 
-print(calculation([10, 4, 1], ['+', '-', '*']))
+print(calculation([1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1],
+                  ['+', '+', '+', '*', '*', '*', '+', '+', '+', '*', '*', '*', '+', '+', '+', '*', '*', '*', '+', '+',
+                   '+', '*', '*', '*', '//']))
