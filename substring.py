@@ -17,12 +17,12 @@ def get_result(s: str, k: int, string_goal: str):
             tmp = s[0:i:] + s[i + 1::]
             matches = calculate_matches(tmp, string_goal)
             if matches > max_matches:
-                counter += 1
                 tmp_matches = tmp
                 max_matches = matches
             i += 1
+        counter += 1
         s = tmp_matches
     return max_matches
 
 
-print(get_result('agdadb', 2, 'gdd'))
+print(get_result('agdadb', 5, 'gddr'))
