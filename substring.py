@@ -11,6 +11,7 @@ def get_result(s: str, k: int, string_goal: str):
     counter = 0
     max_matches = 0
     while counter < k:
+        fl = False
         i = 0
         tmp_matches = s
         while i < len(s):
@@ -19,10 +20,14 @@ def get_result(s: str, k: int, string_goal: str):
             if matches > max_matches:
                 tmp_matches = tmp
                 max_matches = matches
+                fl = True
             i += 1
         counter += 1
-        s = tmp_matches
+        if not fl:
+            s = s[1::]
+        else:
+            s = tmp_matches
     return max_matches
 
 
-print(get_result('agdadb', 5, 'gddr'))
+print(get_result('aaaaabb', 5, 'bb'))
